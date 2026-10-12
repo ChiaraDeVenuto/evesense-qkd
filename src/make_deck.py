@@ -24,16 +24,18 @@ def blank(prs):
 
 
 def textbox(slide, left, top, width, height, text, size=18, bold=False,
-            colour=INK, space_after=8):
+            colour=INK, space_after=10):
+    """Add a text box. Double newlines separate paragraphs, single newlines
+    inside a block are ignored so the text wraps naturally."""
     box = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
     tf = box.text_frame
     tf.word_wrap = True
-    for i, line in enumerate(text.split("\n")):
+    for i, block in enumerate(text.split("\n\n")):
         para = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         run = para.add_run()
-        run.text = line
-        run.font.size = Pt(size if i == 0 else size - 3)
-        run.font.bold = bold and i == 0
+        run.text = " ".join(block.split("\n")).strip()
+        run.font.size = Pt(size)
+        run.font.bold = bold
         run.font.color.rgb = colour
         para.space_after = Pt(space_after)
     return box
@@ -46,7 +48,7 @@ def title_slide(prs):
             "Catching an eavesdropper on a BB84 link that is already noisy",
             size=22)
     textbox(s, 0.7, 4.3, 8.6, 1.4,
-            "Chiara De Venuto\nQiskit Fall Fest 2026 @ MPSTME, IBM Quantum\n"
+            "Chiara De Venuto - team ChiaraDev\nQiskit Fall Fest 2026 @ MPSTME, IBM Quantum\n"
             "Quantum Secure Communication track",
             size=14, colour=MUTED)
 
