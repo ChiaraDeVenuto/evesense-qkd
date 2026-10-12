@@ -138,20 +138,6 @@ the figures come out the same every time.
 - Mid-circuit measurement is emulated by sampling the Born rule rather
   than executed inside the circuit.
 
-## In sintesi
-
-Oggi ho sperimentato una cosa nuova per me che riguarda la fisica
-quantistica. Ho usato un protocollo di crittografia quantistica, il
-BB84, con la libreria quantistica Qiskit di IBM. Ho simulato il
-protocollo sul simulatore quantistico Qiskit Aer, iniettando rumore di
-canale e un attaccante, e ho calcolato il QBER (Quantum Bit Error Rate)
-per capire quando la chiave crittografica diventa di fatto
-inutilizzabile. Ho verificato che sopra l'11% di QBER la chiave non è
-più affidabile perché gli errori sono troppi per essere corretti. Ho
-anche trovato che una linea rumorosa produce un tasso di errori che si
-sovrappone a quello di un attaccante silenzioso, rendendo difficile
-distinguere i due casi con una singola soglia.
-
 ## Author
 
 Chiara De Venuto
