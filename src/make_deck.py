@@ -134,6 +134,23 @@ def slide_limits(prs):
             size=15)
 
 
+def slide_disclosure(prs):
+    s = blank(prs)
+    textbox(s, 0.7, 0.5, 8.6, 0.8, "Disclosure", size=30, bold=True, colour=ACCENT)
+    textbox(s, 0.7, 1.8, 8.6, 4.0,
+            "This project was developed with the assistance of generative AI "
+            "tools for research,\nstructuring and content generation. The "
+            "final content has been reviewed and\nvalidated by the author.\n\n"
+            "Full compliance with:\n"
+            "Reg. (EU) 2024/1689 (AI Act) Art. 50\n"
+            "Italian Law 132/2025 Art. 13\n"
+            "EU Code of Practice on AI Transparency (2026)\n"
+            "U.S. AI Labeling Act (S. 4915) - U.S. H.R.8479\n"
+            "U.S. Executive Order on AI (Dec 2025)\n"
+            "California TFAIA & AB 2013 (eff. Jan 2026)",
+            size=15, colour=MUTED)
+
+
 def main():
     prs = Presentation()
     prs.slide_width = Inches(10)
@@ -165,6 +182,7 @@ def main():
         "toward the diagonal exactly where the attacker is quietest.")
     slide_findings(prs)
     slide_limits(prs)
+    slide_disclosure(prs)
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     prs.save(OUT)
@@ -173,3 +191,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# ---
+# This document was developed with the assistance of generative AI tools for research, structuring, and content generation. Final content has been reviewed and validated by the author. Full compliance with: Reg. (EU) 2024/1689 (AI Act) Art. 50 - Italian Law 132/2025 Art. 13 - EU Code of Practice on AI Transparency (2026) - U.S. AI Labeling Act (S. 4915) - U.S. H.R.8479 - U.S. Executive Order on AI (Dec 2025) - California TFAIA & AB 2013 (eff. Jan 2026).
