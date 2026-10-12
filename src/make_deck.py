@@ -55,7 +55,7 @@ def title_slide(prs):
             "Catching an eavesdropper on a BB84 link that is already noisy",
             size=22)
     textbox(s, 0.7, 4.3, 8.6, 1.4,
-            "Chiara De Venuto - team ChiaraDev\n\nQiskit Fall Fest 2026 @ MPSTME, IBM Quantum\n\n"
+            "Chiara De Venuto - Team ChiaraDev\n\nQiskit Fall Fest 2026 @ MPSTME, IBM Quantum\n\n"
             "Quantum Secure Communication track",
             size=14, colour=MUTED)
 
